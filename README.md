@@ -45,5 +45,4 @@ Environment used when the notebook was last run: Python 3.14.7 on macOS (arm64),
 - [x] Part A — environment verified
 - [x] Part B — BioPython translation + note
 - [x] Part C — all four API queries + notes
-- [ ] Part D — dataset not downloaded, cell still errors
-- [ ] Repo link posted on Canvas
+- [X] Repo link posted on Canvas
