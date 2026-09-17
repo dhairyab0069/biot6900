@@ -33,7 +33,7 @@ conda activate biot6900
 jupyter lab module1_setup.ipynb
 ```
 
-Run cells top to bottom. Parts C needs an internet connection since every cell there hits a live API — the PubMed and GWAS results can change over time, so re-running may not reproduce the exact IDs above.
+Run cells top to bottom. Parts C needs an internet connection since every cell there hits a live API. The PubMed and GWAS results can change over time, so re-running may not reproduce the exact IDs above.
 
 Environment used when the notebook was last run: Python 3.14.7 on macOS (arm64), BioPython 1.86, pandas 3.0.5, numpy 2.5.2, requests 2.34.2.
 
