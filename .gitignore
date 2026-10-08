@@ -12,3 +12,13 @@ venv/
 
 # Data files downloaded for assignments
 data/
+
+# Module 2 data was sourced by me and is part of that submission.
+# Module 3 data/ is the course data pack and must not be committed (announcement, Step 4).
+!module2/data/
+module3/data_student_built/
+
+# Local caches and tool settings
+.cache/
+.claude/
+module3/REPORT_CHANGES.md
