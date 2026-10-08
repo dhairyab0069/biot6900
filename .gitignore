@@ -22,3 +22,8 @@ module3/data_student_built/
 .cache/
 .claude/
 module3/REPORT_CHANGES.md
+
+# Module 4 notebooks download AlphaFold/PDB files here on first run
+module4/structures/
+module4/demo_pymol.pml
+module4/demo_chimerax.cxc

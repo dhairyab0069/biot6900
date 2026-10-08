@@ -9,6 +9,7 @@ Dhairya Bhatia (bhatia.dh@northeastern.edu)
 | `module1_setup.ipynb` | Module 1 starter notebook : environment check, BioPython intro, and four database API queries |
 | `module2/` | Module 2 : multi-omics target prioritization in Alzheimer's disease (see `module2/README.md`) |
 | `module3/` | Module 3 : target triage with protein language models (see `module3/README.md`) |
+| `module4/` | Module 4 : structure prediction and structure-based druggability, lab notebooks (Part 1, Part 2, drug-pocket demo); assignment to follow |
 
 ## What Module 1 does
 
