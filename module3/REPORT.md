@@ -11,15 +11,6 @@ header-includes:
   - \setlength{\parskip}{4pt}
 ---
 
-**Overview:** I took my top 15 Alzheimer's disease (AD) targets from Module 2 and asked whether
-each one looks like a protein that has already been drugged, and by which modality. I trained a
-small-molecule prior and an antibody prior on ESM C 300M embeddings from the course data pack,
-validated them with a family-held-out split, listed each target's nearest drugged proteins, scored
-the anchor variants (ESM-2 650M) and re-ranked the list for Week 4. The training panel has 1,201
-proteins, 401 (one third) with clinical precedence, in 821 family groups. One of my targets,
-HLA-DRB1, is in the panel and was removed before fitting (leakage guard), leaving 1,200 training
-proteins.
-
 ## 1. Re-ranking
 
 **Did the prior agree with my Module 2 ranking?** Mostly not, and that is expected. The two scores
@@ -53,16 +44,21 @@ Module 2 hits are immune and cell-surface proteins. The targets fall into three 
 
 APOE and APOB tie on the final score (0.253); the tie is broken by Module 2 order.
 
-**Which target moved most, and why?** Two targets moved four places. **RPH3A** fell furthest, from
-8th to 12th. Rabphilin-3A is a cytosolic synaptic-vesicle protein built from a Rab-binding zinc
-finger and two C2 domains, which work through protein and membrane contacts rather than a
-ligand pocket. It is intracellular, so antibodies cannot reach it (p_ab 0.00), and its small-molecule
-prior is low (0.09). Its nearest drugged proteins, the calcium-channel β subunits CACNB3 and
-CACNB2, are most likely labelled through the drugged channel complex they belong to, not because
-they hold a pocket themselves. **APLNR** rose furthest, from 10th to 6th. It is the apelin receptor, a class A GPCR, and
-its nearest drugged proteins (AGTR2, GHSR, S1PR2) are all class A GPCRs, the classic
-small-molecule target class. PECAM1 and MOG also rose (+3 each) on strong antibody priors.
+**Which target moved most, and why?** Two targets moved four places:
 
+- **RPH3A fell furthest (8th to 12th):** Rabphilin-3A is a cytosolic synaptic-vesicle protein built
+  from a Rab-binding zinc finger and two C2 domains, which work through protein and membrane
+  contacts rather than a ligand pocket. It is intracellular, so antibodies cannot reach it
+  (p_ab 0.00), and its small-molecule prior is low (0.09). Its nearest drugged proteins, the
+  calcium-channel β subunits CACNB3 and CACNB2, are most likely labelled through the drugged
+  channel complex they belong to, not because they hold a pocket themselves
+- **APLNR rose furthest (10th to 6th):** it is the apelin receptor, a class A GPCR, and its nearest
+  drugged proteins (AGTR2, GHSR, S1PR2) are all class A GPCRs, the classic small-molecule target
+  class
+
+PECAM1 and MOG also rose (+3 each) on strong antibody priors.
+
+\needspace{12\baselineskip}
 **Justifying w = 0.6:** I weighted Module 2 evidence slightly above tractability:
 
 1. **Disease relevance comes first:** a druggable protein that is not causal in AD is a wasted
