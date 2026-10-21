@@ -1,0 +1,3 @@
+gene,uniprot,module2_rank,mean_pLDDT,pct_below_50,n_domains,inter_domain_PAE,pdb_id,rmsd_confident,best_pocket_score,best_pocket_verdict,druggability_call
+ITGAX,P20702,6,88.0,3.4,1,,4NEH,0.86,0.489,keep,Possible but uncertain
+APLNR,P35414,10,81.7,15.5,1,,7SUS,1.11,0.304,keep,Structure supports a small-molecule pocket

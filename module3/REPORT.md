@@ -1,7 +1,6 @@
 ---
 title: "BIOT 6900 · Module 3: Target Triage with Protein Language Models"
-subtitle: "Alzheimer's disease · Computational Lab 3"
-author: "Dhairya Bhatia · bhatia.dh@northeastern.edu"
+author: "Dhairya Bhatia"
 geometry: margin=0.7in
 fontsize: 10pt
 mainfont: Arial
@@ -46,23 +45,24 @@ APOE and APOB tie on the final score (0.253); the tie is broken by Module 2 orde
 
 **Which target moved most, and why?** Two targets moved four places:
 
-- **RPH3A fell furthest (8th to 12th):** Rabphilin-3A is a cytosolic synaptic-vesicle protein built
-  from a Rab-binding zinc finger and two C2 domains, which work through protein and membrane
-  contacts rather than a ligand pocket. It is intracellular, so antibodies cannot reach it
-  (p_ab 0.00), and its small-molecule prior is low (0.09). Its nearest drugged proteins, the
-  calcium-channel β subunits CACNB3 and CACNB2, are most likely labelled through the drugged
-  channel complex they belong to, not because they hold a pocket themselves
-- **APLNR rose furthest (10th to 6th):** it is the apelin receptor, a class A GPCR, and its nearest
-  drugged proteins (AGTR2, GHSR, S1PR2) are all class A GPCRs, the classic small-molecule target
-  class
+- **RPH3A fell furthest (8th to 12th):** Rabphilin-3A is a synaptic-vesicle protein inside the
+  cell that works by binding other proteins and membranes rather than through a drug-like pocket.
+  Antibodies cannot reach it (p_ab 0.00), and its small-molecule prior is low (0.09). Its nearest
+  drugged proteins, the calcium-channel subunits CACNB3 and CACNB2, are most likely labelled
+  drugged because the channel they belong to is a drug target, not because they have a pocket
+  themselves
+- **APLNR rose furthest (10th to 6th):** it is the apelin receptor, a GPCR, and its nearest drugged
+  proteins (AGTR2, GHSR, S1PR2) are all GPCRs of the same class, the classic small-molecule target
+  family
 
 PECAM1 and MOG also rose (+3 each) on strong antibody priors.
 
 \needspace{12\baselineskip}
 **Justifying w = 0.6:** I weighted Module 2 evidence slightly above tractability:
 
-1. **Disease relevance comes first:** a druggable protein that is not causal in AD is a wasted
-   programme, and tractability can be engineered (new modality, pathway partner) while causality cannot
+1. **Disease relevance comes first:** a druggable protein that does not cause AD is a wasted
+   programme, and tractability can be worked around (a different modality or a partner in the same
+   pathway) while causality cannot
 2. **The prior is only moderately reliable:** its family-split AUROC is 0.745 (Section 3), so it
    should adjust the ranking, not override it
 3. **Sensitivity:** at w = 0.5 the prior starts to override strong genetics (HLA-DRA, the Module 2
@@ -77,26 +77,26 @@ w = 0.6 keeps the disease signal in charge while still moving clearly tractable 
 
 **Target: PECAM1 (p_ab 0.88, p_sm 0.02)**, the sharpest antibody-over-small-molecule split.
 
-- **Localisation:** a single-pass type I membrane protein on endothelial cells, platelets and
-  leukocytes, with a large extracellular region exposed to the blood
-- **Family:** six immunoglobulin-like domains. Its nearest drugged proteins are a cell-surface Ig
-  receptor (CD2), a secreted cytokine subunit (IL12B) and a basement-membrane laminin (LAMA4), all
-  extracellular, and CD2 and IL12B are antibody-drugged
-- **Likely pocket:** none deep, since Ig domains bind partners (PECAM1 binds itself between cells)
-  through flat, broad protein–protein surfaces that small molecules cannot grip
-- **AD angle:** PECAM1 marks blood–brain barrier endothelium, so an antibody can reach it from the
-  blood without crossing the barrier
+- **Location:** a membrane protein on blood-vessel lining cells, platelets and white blood cells,
+  with a large outer region exposed to the blood
+- **Family:** made of six antibody-like (immunoglobulin) domains. Its nearest drugged proteins are
+  a cell-surface receptor (CD2), a secreted cytokine subunit (IL12B) and a laminin (LAMA4), all
+  outside the cell, and CD2 and IL12B are antibody-drugged
+- **Likely pocket:** none deep, since these domains bind partners (PECAM1 binds itself between
+  cells) through flat, broad surfaces that small molecules cannot grip
+- **AD angle:** PECAM1 sits on the blood vessels of the blood–brain barrier, so an antibody can
+  reach it from the blood without having to cross into the brain
 
-**The mirror image, APLNR (p_sm 0.68, p_ab 0.03):** a seven-transmembrane class A GPCR. Its
-ligand-binding (orthosteric) pocket sits inside the transmembrane helix bundle, which is where most
-GPCR small-molecule drugs bind, and its nearest drugged proteins are three other class A GPCRs. The
-part an antibody could reach, the short N-terminus and extracellular loops, is small. The panel has
-53 class A GPCRs, 33 of them with clinical precedence, so this prior rests on a well-populated class.
+**The mirror image, APLNR (p_sm 0.68, p_ab 0.03):** a GPCR that crosses the membrane seven times.
+Its natural ligand binds in a pocket inside this bundle, which is where most GPCR small-molecule
+drugs bind, and its nearest drugged proteins are three other GPCRs of the same class. The part an
+antibody could reach outside the cell is small. The panel has 53 GPCRs of this class, 33 of them
+with clinical precedence, so this prior rests on a well-populated family.
 
 **The hard case, APOE (p_sm 0.00, p_ab 0.01):** a secreted lipid carrier with no enzyme
-pocket or receptor fold, so it looks like neither drug class. That is a modality problem, not a
-reason to drop it. Options include structure correctors that block the ApoE4 domain interaction,
-antibodies against ApoE deposited in plaques, or the pathway around it (LDLR, ABCA1).
+pocket or receptor shape, so it looks like neither drug class. That is a modality problem, not a
+reason to drop it. Options include small molecules that correct the shape of ApoE4, antibodies
+against ApoE stuck in amyloid plaques, or targeting the proteins it works with (LDLR, ABCA1).
 
 \needspace{12\baselineskip}
 
@@ -104,16 +104,16 @@ antibodies against ApoE deposited in plaques, or the pathway around it (LDLR, AB
 
 | Split | AUROC | Average precision |
 |---|---:|---:|
-| Random (StratifiedKFold) | 0.839 | 0.717 |
-| **Family (GroupKFold on family_group)** | **0.745** | **0.548** |
+| Random | 0.839 | 0.717 |
+| **Family (held out by family group)** | **0.745** | **0.548** |
 | Chance | 0.500 | 0.333 |
 
 **Why the family split is the honest number:** in a random split, close relatives sit on both
 sides of a fold. If AKT1 is in training, AKT3 is easy to "predict". That rewards memorising
 families, not learning what makes a protein tractable. In this panel the family split is strict:
-all 61 protein-kinase-superfamily members form one group, and all 53 class A GPCRs another, so each
-class is held out as a whole. That matches the real situation for a new AD target whose family
-may never have been drugged (APOC1, MTSS2, RPH3A).
+all 61 kinases form one group, and all 53 GPCRs of the main class another, so each family is held
+out as a whole. That matches the real situation for a new AD target whose family may never have
+been drugged (APOC1, MTSS2, RPH3A).
 
 **What the random split would have hidden:** a drop of 0.094 AUROC and 0.169 AP. The AP gain over
 chance shrinks from 0.384 to 0.215, so the random split hides about 44% of it. The prior still
@@ -122,10 +122,11 @@ proteins unlike anything in the panel.
 
 ## 4. Variants
 
-I use **UniProt numbering**, which includes APOE's 18-residue signal peptide (R176C is mature R158C,
-ε2, and C130R is mature C112R, ε4). Scores are ESM-2 650M masked marginals, log P(mutant) − log
-P(wild type). The percentile ranks each variant among every possible substitution in that protein,
-so a low percentile means more surprising than most.
+I number residues as UniProt does, which counts APOE's 18-residue signal peptide, so the positions
+are 18 higher than the usual ApoE names (R176C is the familiar R158C, ε2, and C130R is C112R, ε4).
+Scores come from ESM-2 650M and compare how likely the model finds the mutant versus the original
+residue (log P(mutant) − log P(wild type)). The percentile ranks each variant among every possible
+substitution in that protein, so a low percentile means more surprising than most.
 
 | Gene | Variant (UniProt) | Meaning | Score | Percentile in protein |
 |---|---|---|---:|---:|
@@ -139,17 +140,17 @@ For comparison, the median substitution scores −3.9 in APOE, −4.8 in TREM2 a
 **Interpreting the scores:**
 
 - **APOE ε4 (C130R), the most "expected" change in all of APOE:** the model prefers arginine over
-  the human reference cysteine here, because ε4 is the ancestral allele and other mammals carry
+  the human reference cysteine here, because ε4 is the ancestral version and other mammals carry
   arginine at this position, yet it is the largest common genetic risk factor for AD
-- **APOE ε2 (R176C), scored as damaging:** R176 sits in the receptor-binding region and ε2 does
-  weaken LDL-receptor binding (ε2/ε2 causes type III hyperlipoproteinaemia), so the model flags a
-  real functional change that is protective for AD
+- **APOE ε2 (R176C), scored as damaging:** R176 sits in the region that binds the LDL receptor,
+  and ε2 does weaken that binding (two copies cause a cholesterol disorder), so the model flags a
+  real functional change that happens to protect against AD
 - **TREM2 R47H, middling:** no more surprising than a typical TREM2 substitution despite a two- to
-  fourfold rise in AD risk, because its effect is a subtle loss of ligand binding on the Ig-domain
-  surface rather than a broken fold
-- **p53 R175H, in the damaging tail:** expected for a structural hotspot, but not the most extreme
-  hotspot (R248Q scores −9.55, 5.2nd percentile), since cancer selects for dominant-negative and
-  gain-of-function effects, not for evolutionary surprise
+  fourfold rise in AD risk, because it subtly weakens ligand binding on the protein surface rather
+  than breaking the fold
+- **p53 R175H, in the damaging tail:** expected for a hotspot that breaks the fold, but not the
+  most extreme hotspot (R248Q scores −9.55, 5.2nd percentile), since cancer selects for mutations
+  that change what p53 does, not for how unusual they look in evolution
 
 The two APOE alleles show the key point: the model ranks them in the **opposite order** to their
 AD risk.
@@ -160,18 +161,19 @@ disease. A change can be surprising and harmless, or ordinary and disease-causin
 
 **What these models cannot see:**
 
-- **Variant types:** non-coding, splice, insertion and deletion, and copy-number variants
+- **Variant types:** changes outside the protein-coding sequence, splicing changes, insertions and
+  deletions, and copy-number changes
 - **Context:** binding partners (lipid, receptor, DNA), cell type, expression level, dose (one or
   two copies), age, and interactions with other variants
-- **Clinical evidence:** population frequency, segregation and case data used by ClinVar and ACMG
-  rules, which Week 5 compares against CADD, REVEL and SpliceAI
+- **Clinical evidence:** population frequency, family and patient data used by ClinVar and clinical
+  classification rules, which Week 5 compares against CADD, REVEL and SpliceAI
 
 ## 5. Limitations and next step
 
 **What sequence alone cannot tell me:**
 
-- **Pockets and 3D shape:** the prior says "looks like drugged proteins", not "has a ligandable
-  pocket", and cryptic or mutant-specific pockets (p53 Y220C) are invisible
+- **Pockets and 3D shape:** the prior says "looks like drugged proteins", not "has a pocket a drug
+  can bind", and hidden or mutant-only pockets (p53 Y220C) are invisible
 - **History in the labels:** labels record where industry has worked, so undrugged classes
   (apolipoproteins, scaffolds such as SHANK2 and PLEC) score low partly because nobody has tried.
   Labels can also pass to every subunit of a drugged complex, which is likely why two of GMPR's
@@ -179,29 +181,28 @@ disease. A change can be surprising and harmless, or ordinary and disease-causin
 - **An unbalanced antibody prior:** only 66 training proteins have antibody precedence, against 301
   for small molecules, so p_ab rests on far fewer examples than p_sm
 - **Brain delivery:** nothing here models the blood–brain barrier, which decides whether a drug
-  reaches a microglial target such as ITGAX or HLA-DR
-- **Direction and safety:** whether to inhibit or activate, and on- and off-target toxicity (HLA-DR
-  is central to immune function)
-- **Similarity is not homology:** a typical panel pair already has cosine 0.72 (5th to 95th
+  reaches a target on brain immune cells such as ITGAX or HLA-DR
+- **Direction and safety:** whether to inhibit or activate, and side effects (HLA-DR is central to
+  immune function)
+- **Similarity is not shared ancestry:** a typical panel pair already has cosine 0.72 (5th to 95th
   percentile 0.30 to 0.90), so a top-3 match at 0.85 to 0.98 is a ranking, and some matches
   (SHANK2 → E2F7, APOB → AFP, both 0.97) likely reflect protein size and composition rather than
   shared biology
 
 **Two targets for Week 4 (structure-based pocket assessment):**
 
-1. **ITGAX (final rank 4, p_ab 0.59):** CD11c marks disease-associated microglia, so it is close to
-   AD biology. Integrin α subunits like ITGAX carry an inserted I-domain with a metal-ion site
-   (MIDAS) that binds ligands. In the related ITGAL this domain is drugged by lifitegrast, which
-   competes with ICAM-1 binding, and it also has an allosteric pocket that experimental inhibitors
-   bind. Week 4 should test whether ITGAX's I-domain shows comparable pockets, which would open a
-   small-molecule route alongside antibodies
+1. **ITGAX (final rank 4, p_ab 0.59):** CD11c marks the brain immune cells that gather around AD
+   damage, so it is close to AD biology. ITGAX has a ligand-binding domain that is drugged in its
+   relative ITGAL by lifitegrast, and that domain also has a second pocket that experimental
+   inhibitors bind. Week 4 should test whether ITGAX's version shows similar pockets, which would
+   open a small-molecule route alongside antibodies
 2. **APLNR (final rank 6, p_sm 0.68):** my strongest small-molecule prior, a GPCR with a defined
-   orthosteric pocket, and experimental apelin-receptor structures exist, so Week 4 can check the
+   ligand pocket, and experimental apelin-receptor structures exist, so Week 4 can check the
    predicted structure against them before assessing the pocket
 
 I did not pick PECAM1, despite its first place: it is an antibody target with flat binding
 surfaces, so pocket assessment would add little. I would hold APOE as an exploratory third
-structure, because the ε4 domain interaction is a known structure-corrector site that a sequence
+structure, because ApoE4 has a known site where shape-correcting drugs bind, which a sequence
 prior cannot see.
 
 ## Unmapped genes
@@ -210,7 +211,8 @@ prior cannot see.
 scored. In my full Module 2 list of 1,115 genes the only gene without a protein is **UBBP4**, a
 ubiquitin pseudogene. A protein language model cannot score it. It would need different evidence:
 
-- **Expression evidence:** RNA-seq showing whether the pseudogene is transcribed in AD brain
-- **Regulatory evidence:** whether it acts as a non-coding RNA (for example a decoy for UBB
-  microRNAs), tested by knockdown
-- **Genetic evidence:** eQTL or GWAS colocalisation linking its locus to AD risk
+- **Expression evidence:** RNA-seq showing whether the pseudogene is made into RNA in AD brain
+- **Regulatory evidence:** whether its RNA has a role of its own (for example soaking up microRNAs
+  that would otherwise act on UBB), tested by knocking it down
+- **Genetic evidence:** whether variants at its location affect its expression and line up with AD
+  risk signals
