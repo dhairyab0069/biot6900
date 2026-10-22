@@ -6,7 +6,7 @@ Dhairya Bhatia · Gene: **CYP2C19** (assigned on Canvas)
 |---|---|
 | `BIOT6900_Module5_Part3_Assignment.ipynb` | The assignment, run top to bottom (Kernel → Restart & Run All) |
 | `pgx_classified_CYP2C19.csv` | The 33 VUS with their CADD band, pooled evidence and my provisional call |
-| `REPORT.md` / `REPORT.pdf` | The report |
+| `REPORT.pdf` | The report |
 
 **Atlas:** not run. I had no AlphaGenome API key, so `SKIP_ATLAS = True`. The report answers the Atlas question from reasoning.
 

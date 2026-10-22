@@ -6,7 +6,7 @@ Dhairya Bhatia · Alzheimer's disease (AD)
 |---|---|
 | `BIOT6900_Module4_Assignment.ipynb` | The assignment, run top to bottom (Kernel → Restart & Run All) |
 | `structure_assessment_ad.csv` | Summary table from Step 7 |
-| `REPORT.md` / `REPORT.pdf` | The 4-page report |
+| `REPORT.pdf` | The 4-page report |
 | `figures/` | pLDDT, PAE and deviation plots taken from the notebook for the report |
 | `BIOT6900_Module4_Part1_ToyModel.ipynb`, `..._Part2_RealData.ipynb`, `..._Demo_DrugPocket.ipynb` | Lab notebooks (not graded) |
 
