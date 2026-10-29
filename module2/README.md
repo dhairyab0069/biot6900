@@ -17,7 +17,9 @@ direction agreement, and genes are ranked by an equal-weighted multi-evidence sc
 | `data/` | Processed input tables (see [Data sources](#data-sources)). |
 | `targets_ad.csv` | **Deliverable:** Top 15 ranked AD targets. |
 | `targets_ad_full.csv` | Full ranked list (1,115 genes), passed on to Week 3. |
-| `REPORT.md` / `REPORT.pdf` | Written report. |
+| `REPORT.pdf` | Written report (4 pages, with figures). |
+| `figures/` | Report figures: integration scatter, Venn diagrams, top-15 score breakdown. |
+| `scripts/make_figures.py` | Re-plots `figures/` from `targets_ad_full.csv` (`python module2/scripts/make_figures.py` from the repository root). |
 
 ## Reproducing the analysis
 

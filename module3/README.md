@@ -15,7 +15,8 @@ and re-ranks the targets for Week 4 (structure prediction).
 | `BIOT6900_Module3_Assignment.ipynb` | Assignment notebook (Steps 1 to 7), runs top to bottom with `Restart & Run All` |
 | `targets_ad.csv` | Input: my Module 2 top 15 AD targets (copied from `../module2`) |
 | `targets_ad_w3.csv` | **Deliverable:** re-ranked targets, the hand-off to Week 4 |
-| `REPORT.pdf` / `REPORT.md` | Written report |
+| `REPORT.pdf` | Written report (6 pages, with figures) |
+| `figures/` | Report figures: re-ranking, validation and variant-score plots (`python module3/scripts/make_figures.py` from the repository root; needs `data/`) |
 | `modality_map.png` | Report figure: small-molecule versus antibody prior for each target (`python scripts/make_modality_map.py`) |
 | `BIOT6900_Module3_Part2_RealData.ipynb` | Lab Part 2 notebook (self-paced, not graded) |
 | `data/` | The course data pack from Canvas (`BIOT6900_Module3_DataPack.zip`), not committed (see `.gitignore`) |

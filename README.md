@@ -11,6 +11,7 @@ Dhairya Bhatia (bhatia.dh@northeastern.edu)
 | `module3/` | Module 3 : target triage with protein language models (see `module3/README.md`) |
 | `module4/` | Module 4 : structure-based druggability of ITGAX and APLNR, assignment notebook, summary CSV and report, plus the lab notebooks (see `module4/README.md`) |
 | `module5/` | Module 5 : variant interpretation on CYP2C19, assignment notebook, classified VUS CSV and report (see `module5/README.md`) |
+| `portfolio1/` | Portfolio Deliverable 1 : the Part I package bringing Labs 2 to 4 together into one report (see `portfolio1/README.md`) |
 
 ## What Module 1 does
 

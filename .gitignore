@@ -27,3 +27,16 @@ module3/REPORT_CHANGES.md
 module4/structures/
 module4/demo_pymol.pml
 module4/demo_chimerax.cxc
+
+# Module 7: course handouts stay local; Neo4j Aura credentials must never be committed
+module7/*.pdf
+module7/*.pptx
+module7/Neo4j-*.txt
+module7/.env
+.env
+
+# Module 6: course handouts stay local
+module6/*.pptx
+module6/*.pdf
+module6/data_grs83/
+module6/BIOT6900_Module6_Part2_RealPRS.ipynb
