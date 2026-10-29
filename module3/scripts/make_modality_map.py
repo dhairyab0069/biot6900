@@ -1,6 +1,6 @@
 """Report figure: small-molecule vs antibody prior for each target.
 
-Reads targets_ad_w3.csv (the notebook's export) and writes modality_map.png.
+Reads targets_ad_w3.csv (the notebook's export) and writes figures/modality_map.png.
 Usage: python scripts/make_modality_map.py [csv] [out.png]
 """
 import os
@@ -13,7 +13,7 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 csv = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "targets_ad_w3.csv")
-out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "modality_map.png")
+out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "figures", "modality_map.png")
 LOW = 0.1   # below this on both axes counts as "near zero for both"
 # Label nudges (points) for genes whose labels collide; anything else goes up and right.
 NUDGE = {"APOC1": (8, -9), "HLA-DRA": (8, -4), "HLA-DRB1": (6, 5), "MTSS2": (0, 12, "center"), "GMPR": (6, 7)}

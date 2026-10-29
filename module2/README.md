@@ -17,7 +17,7 @@ direction agreement, and genes are ranked by an equal-weighted multi-evidence sc
 | `data/` | Processed input tables (see [Data sources](#data-sources)). |
 | `targets_ad.csv` | **Deliverable:** Top 15 ranked AD targets. |
 | `targets_ad_full.csv` | Full ranked list (1,115 genes), passed on to Week 3. |
-| `REPORT.pdf` | Written report (4 pages, with figures). |
+| `REPORT.pdf` | Written report (5 pages, with figures). |
 | `figures/` | Report figures: integration scatter, Venn diagrams, top-15 score breakdown. |
 | `scripts/make_figures.py` | Re-plots `figures/` from `targets_ad_full.csv` (`python module2/scripts/make_figures.py` from the repository root). |
 
@@ -63,7 +63,7 @@ identifiers, so integration is at the gene level rather than the sample level.
 3. **Concordance:** `concordant = sign(RNA lfc) == sign(protein lfc)`.
 4. **Scoring:** Per-layer magnitude (|RNA lfc|, |protein lfc|, −log10 p), rank-percentile
    normalized, then combined with equal weights (1/3 each).
-5. **Export:** Sort by score and write the top 15 and the full list to `data/`.
+5. **Export:** Sort by score and write the top 15 (`targets_ad.csv`) and the full list (`targets_ad_full.csv`).
 
 ## Key results
 

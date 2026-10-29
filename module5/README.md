@@ -8,7 +8,7 @@ This module interprets the ClinVar variants of CYP2C19, a liver enzyme that acti
 |---|---|
 | `BIOT6900_Module5_Part3_Assignment.ipynb` | The assignment, run top to bottom (Kernel → Restart & Run All) |
 | `pgx_classified_CYP2C19.csv` | The 33 VUS with their CADD band, pooled evidence and my provisional call |
-| `REPORT.pdf` | The report (3 pages) |
+| `REPORT.pdf` | The report (4 pages) |
 | `figures/`, `scripts/make_figures.py` | Report figure: CADD calibration bands with CYP2C19's own no-function alleles (`python module5/scripts/make_figures.py` from the repository root; needs the notebook's `data/` cache) |
 
 **Data sources (all public):**

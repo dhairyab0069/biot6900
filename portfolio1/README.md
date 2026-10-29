@@ -2,11 +2,11 @@
 
 Dhairya Bhatia · Alzheimer's disease (AD)
 
-This package brings Labs 2 to 4 together into one 5-page report. It follows my AD targets from multi-omics evidence (Lab 2), through druggability triage with protein language models (Lab 3), to AlphaFold structure and pocket assessment (Lab 4), and ends with a ranked shortlist of five targets: APLNR, ITGAX, PECAM1, HLA-DRB1 and APOE. No new analysis was run; the figures are re-plotted from saved lab outputs.
+This package brings Labs 2 to 4 together into one 6-page report. It follows my AD targets from multi-omics evidence (Lab 2), through druggability triage with protein language models (Lab 3), to AlphaFold structure and pocket assessment (Lab 4), and ends with a ranked shortlist of five targets: APLNR, ITGAX, PECAM1, HLA-DRB1 and APOE. No new analysis was run; the figures are re-plotted from saved lab outputs.
 
 | File | What it is |
 |---|---|
-| `REPORT.pdf` | The 5-page package submitted on Canvas |
+| `REPORT.pdf` | The 6-page package submitted on Canvas |
 | `REPORT.md` | Source of the report (built with pandoc and xelatex) |
 | `make_figures.py` | Re-plots Figures 1, 2 and 4 from the Module 2 and 4 outputs (`python portfolio1/make_figures.py` from the repository root) |
 | `figures/` | Figure 1 (integration), Figure 2 (Venn diagrams), Figure 3 (modality map, copied from Module 3), Figure 4 (structures with pLDDT and pockets) |

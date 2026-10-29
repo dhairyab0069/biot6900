@@ -16,11 +16,9 @@ and re-ranks the targets for Week 4 (structure prediction).
 | `targets_ad.csv` | Input: my Module 2 top 15 AD targets (copied from `../module2`) |
 | `targets_ad_w3.csv` | **Deliverable:** re-ranked targets, the hand-off to Week 4 |
 | `REPORT.pdf` | Written report (6 pages, with figures) |
-| `figures/` | Report figures: re-ranking, validation and variant-score plots (`python module3/scripts/make_figures.py` from the repository root; needs `data/`) |
-| `modality_map.png` | Report figure: small-molecule versus antibody prior for each target (`python scripts/make_modality_map.py`) |
+| `figures/` | Report figures: re-ranking, validation and variant-score plots (`python module3/scripts/make_figures.py` from the repository root; needs `data/`), and the modality map (`python scripts/make_modality_map.py`) |
 | `BIOT6900_Module3_Part2_RealData.ipynb` | Lab Part 2 notebook (self-paced, not graded) |
 | `data/` | The course data pack from Canvas (`BIOT6900_Module3_DataPack.zip`), not committed (see `.gitignore`) |
-| `scripts/build_data_pack.py` | Extra: my own build of a data pack from public sources, written before the course pack was posted. Writes to `data_student_built/` (not committed) |
 
 ## Reproducing the analysis
 
@@ -44,18 +42,12 @@ ESM-2 35M embeddings, Open Targets tractability labels, and ESM-2 650M variant s
 UniProt precursor numbering, which includes APOE's 18-residue signal peptide (R176C is mature
 R158C, ε2, and C130R is mature C112R, ε4).
 
-### Extra: my own data pack build
-
-Before the course pack was posted I built a pack myself with `scripts/build_data_pack.py`
-(UniProt, Open Targets, HGNC; ESM C 300M, ESM-2 35M and ESM-2 650M run locally). It used its own
-1,200-protein panel draw and only embedded the panel plus my Module 2 genes. The submitted results
-use the course pack; the script is kept as extra work and now writes to `data_student_built/`.
-
 ## Issues encountered
 
 - **Data pack posted late:** the course data pack was not on Canvas when I started, so I first built
-  my own (see above), then re-ran everything on the course pack once it was posted. The issues
-  below are from that build.
+  my own from UniProt, Open Targets and HGNC, with ESM C and ESM-2 run locally, then re-ran
+  everything on the course pack once it was posted. That build is no longer in the repository; the
+  issues below are from it.
 - **UniProt download stalled:** the UniProt `/stream` endpoint kept stalling, so the script pages
   through the `/search` endpoint 500 entries at a time instead
 - **Out of memory:** on an 8 GB laptop, ESM-2 650M in full precision filled memory and swapped for
