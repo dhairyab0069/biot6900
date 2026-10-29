@@ -2,7 +2,7 @@
 
 Dhairya Bhatia (bhatia.dh@northeastern.edu) · Northeastern University
 
-[Open the interactive page →](https://dhairyab0069.github.io/biot6900/)
+[Open the interactive page →](https://dhairyab0069.github.io/biot6900-io/)
 
 This repository has my work for BIOT 6900. I chose Alzheimer's disease in Module 2 and kept it for most of the course, so the modules build on each other: I found genes linked to Alzheimer's, checked which of them a drug could reach, looked at their structures, and then tested how well a genetic risk score works across ancestries. Module 5 used an assigned gene instead.
 
@@ -176,4 +176,4 @@ jupyter lab
 
 Open a module's notebook and run Kernel → Restart & Run All. Course data packs from Canvas (Modules 3 and 6) go in that module's `data/` folder and are not committed. Module 2 downloads its own data with `scripts/get_data.py`, and Module 4 downloads structures on first run.
 
-The interactive page is `index.html` in this folder, served by GitHub Pages.
+The interactive page has its own repository: [biot6900-io](https://github.com/dhairyab0069/biot6900-io).
