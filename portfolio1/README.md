@@ -7,7 +7,6 @@ This package brings Labs 2 to 4 together into one 6-page report. It follows my A
 | File | What it is |
 |---|---|
 | `REPORT.pdf` | The 6-page package submitted on Canvas |
-| `REPORT.md` | Source of the report (built with pandoc and xelatex) |
 | `make_figures.py` | Re-plots Figures 1, 2 and 4 from the Module 2 and 4 outputs (`python portfolio1/make_figures.py` from the repository root) |
 | `figures/` | Figure 1 (integration), Figure 2 (Venn diagrams), Figure 3 (modality map, copied from Module 3), Figure 4 (structures with pLDDT and pockets) |
 
