@@ -1,0 +1,146 @@
+disease_id,disease,phenotype,hpo
+MONDO_0004975,Alzheimer disease,Hippocampal atrophy,HP_0410170
+MONDO_0004975,Alzheimer disease,Depression,HP_0000716
+MONDO_0004975,Alzheimer disease,Memory impairment,HP_0002354
+MONDO_0004975,Alzheimer disease,Cerebral cortical atrophy,HP_0002120
+MONDO_0004975,Alzheimer disease,Disinhibition,HP_0000734
+MONDO_0004975,Alzheimer disease,Neurofibrillary tangles,HP_0002185
+MONDO_0004975,Alzheimer disease,Abnormality of extrapyramidal motor function,HP_0002071
+MONDO_0004975,Alzheimer disease,Parkinsonism,HP_0001300
+MONDO_0004975,Alzheimer disease,Senile plaques,HP_0100256
+MONDO_0004975,Alzheimer disease,Long-tract sign,HP_0002423
+MONDO_0004975,Alzheimer disease,Alzheimer disease,HP_0002511
+MONDO_0004975,Alzheimer disease,Decreased circulating GABA concentration,HP_0410054
+MONDO_0005180,Parkinson disease,Abnormal autonomic nervous system physiology,HP_0012332
+MONDO_0005180,Parkinson disease,Hallucinations,HP_0000738
+MONDO_0005180,Parkinson disease,Micrographia,HP_0031908
+MONDO_0005180,Parkinson disease,Dysphagia,HP_0002015
+MONDO_0005180,Parkinson disease,Resting tremor,HP_0002322
+MONDO_0005180,Parkinson disease,Neuronal loss in central nervous system,HP_0002529
+MONDO_0005180,Parkinson disease,Depression,HP_0000716
+MONDO_0005180,Parkinson disease,Dysarthria,HP_0001260
+MONDO_0005180,Parkinson disease,Postural instability,HP_0002172
+MONDO_0005180,Parkinson disease,Personality changes,HP_0000751
+MONDO_0005180,Parkinson disease,Lewy bodies,HP_0100315
+MONDO_0005180,Parkinson disease,Parkinsonism,HP_0001300
+MONDO_0005180,Parkinson disease,Short stepped shuffling gait,HP_0007311
+MONDO_0005180,Parkinson disease,Sleep disturbance,HP_0002360
+MONDO_0005180,Parkinson disease,Rigidity,HP_0002063
+MONDO_0005180,Parkinson disease,Parkinsonism with favorable response to dopaminergic medication,HP_0002548
+MONDO_0005180,Parkinson disease,Hyperreflexia,HP_0001347
+MONDO_0005180,Parkinson disease,Sporadic,HP_0003745
+MONDO_0005180,Parkinson disease,Progressive,HP_0003676
+MONDO_0005180,Parkinson disease,Weak voice,HP_0001621
+MONDO_0005180,Parkinson disease,Restless legs,HP_0012452
+MONDO_0005180,Parkinson disease,Bradykinesia,HP_0002067
+MONDO_0005180,Parkinson disease,Substantia nigra gliosis,HP_0011960
+MONDO_0005180,Parkinson disease,Gait disturbance,HP_0001288
+MONDO_0005180,Parkinson disease,Orthostatic hypotension,HP_0001278
+MONDO_0005180,Parkinson disease,Mask-like facies,HP_0000298
+MONDO_0005180,Parkinson disease,Tremor,HP_0001337
+MONDO_0005180,Parkinson disease,Slowly progressive,HP_0003677
+MONDO_0005090,schizophrenia,Delusion,HP_0000746
+MONDO_0005090,schizophrenia,Failure to thrive,HP_0001508
+MONDO_0005090,schizophrenia,Absent speech,HP_0001344
+MONDO_0005090,schizophrenia,Mild intellectual disability,HP_0001256
+MONDO_0005090,schizophrenia,Macroglossia,HP_0000158
+MONDO_0005090,schizophrenia,High palate,HP_0000218
+MONDO_0005090,schizophrenia,Posteriorly rotated ears,HP_0000358
+MONDO_0005090,schizophrenia,Short nail,HP_0001799
+MONDO_0005090,schizophrenia,Retinopathy,HP_0000488
+MONDO_0005090,schizophrenia,Hammertoe,HP_0001765
+MONDO_0005090,schizophrenia,Hallucinations,HP_0000738
+MONDO_0005090,schizophrenia,Deeply set eye,HP_0000490
+MONDO_0005090,schizophrenia,Congenital pseudoarthrosis of the clavicle,HP_0006585
+MONDO_0005090,schizophrenia,Pes planus,HP_0001763
+MONDO_0005090,schizophrenia,Cognitive impairment,HP_0100543
+MONDO_0005090,schizophrenia,Laryngeal stenosis,HP_0001602
+MONDO_0005090,schizophrenia,Joint hypermobility,HP_0001382
+MONDO_0005090,schizophrenia,Myoclonus,HP_0001336
+MONDO_0005090,schizophrenia,Wide nasal bridge,HP_0000431
+MONDO_0005090,schizophrenia,Astigmatism,HP_0000483
+MONDO_0005090,schizophrenia,Webbed neck,HP_0000465
+MONDO_0005090,schizophrenia,2-3 toe cutaneous syndactyly,HP_0005709
+MONDO_0005090,schizophrenia,Expressive language delay,HP_0002474
+MONDO_0005090,schizophrenia,Rhizomelic leg shortening,HP_0012106
+MONDO_0005090,schizophrenia,Thin upper lip vermilion,HP_0000219
+MONDO_0005090,schizophrenia,Hyperprolinemia,HP_0008358
+MONDO_0005090,schizophrenia,Dyslexia,HP_0010522
+MONDO_0005090,schizophrenia,Short neck,HP_0000470
+MONDO_0005090,schizophrenia,Low hanging columella,HP_0009765
+MONDO_0005090,schizophrenia,2-5 finger cutaneous syndactyly,HP_0005650
+MONDO_0005090,schizophrenia,Rhizomelic arm shortening,HP_0004991
+MONDO_0005090,schizophrenia,Grade II vesicoureteral reflux,HP_0033736
+MONDO_0005090,schizophrenia,Motor tics,HP_0100034
+MONDO_0005090,schizophrenia,Blepharophimosis,HP_0000581
+MONDO_0005090,schizophrenia,Unilateral cryptorchidism,HP_0012741
+MONDO_0005090,schizophrenia,Short phalanx of finger,HP_0009803
+MONDO_0005090,schizophrenia,Nonimmune hydrops fetalis,HP_0001790
+MONDO_0005090,schizophrenia,Bipolar affective disorder,HP_0007302
+MONDO_0005090,schizophrenia,Diastasis recti,HP_0001540
+MONDO_0005090,schizophrenia,Facial hemangioma,HP_0000329
+MONDO_0005090,schizophrenia,Small nail,HP_0001792
+MONDO_0005090,schizophrenia,Tapered finger,HP_0001182
+MONDO_0005090,schizophrenia,Everted upper lip vermilion,HP_0010803
+MONDO_0005090,schizophrenia,Protruding ear,HP_0000411
+MONDO_0005090,schizophrenia,Small face,HP_0000274
+MONDO_0005090,schizophrenia,Bilateral ptosis,HP_0001488
+MONDO_0005090,schizophrenia,Hyperactivity,HP_0000752
+MONDO_0005090,schizophrenia,Severe intellectual disability,HP_0010864
+MONDO_0005090,schizophrenia,Narrow forehead,HP_0000341
+MONDO_0005090,schizophrenia,Narrow palate,HP_0000189
+MONDO_0005090,schizophrenia,Tricuspid stenosis,HP_0010446
+MONDO_0005090,schizophrenia,Self-injurious behavior,HP_0100716
+MONDO_0005090,schizophrenia,Broad forehead,HP_0000337
+MONDO_0005090,schizophrenia,Heart murmur,HP_0030148
+MONDO_0005090,schizophrenia,Low-set ears,HP_0000369
+MONDO_0005090,schizophrenia,Pointed chin,HP_0000307
+MONDO_0005090,schizophrenia,Supernumerary maxillary incisor,HP_0006332
+MONDO_0005090,schizophrenia,Mild global developmental delay,HP_0011342
+MONDO_0005090,schizophrenia,Autistic behavior,HP_0000729
+MONDO_0005090,schizophrenia,Narrow nose,HP_0000460
+MONDO_0005090,schizophrenia,EEG abnormality,HP_0002353
+MONDO_0005090,schizophrenia,Bulbous nose,HP_0000414
+MONDO_0005090,schizophrenia,Anisocoria,HP_0009916
+MONDO_0005090,schizophrenia,Macrocephaly,HP_0000256
+MONDO_0005090,schizophrenia,Intellectual disability,HP_0001249
+MONDO_0005090,schizophrenia,Proptosis,HP_0000520
+MONDO_0005090,schizophrenia,Schizophrenia,HP_0100753
+MONDO_0005090,schizophrenia,Profound intellectual disability,HP_0002187
+MONDO_0005090,schizophrenia,Strabismus,HP_0000486
+MONDO_0005090,schizophrenia,Midface retrusion,HP_0011800
+MONDO_0005090,schizophrenia,Borderline intellectual disability,HP_0006889
+MONDO_0005090,schizophrenia,Hepatomegaly,HP_0002240
+MONDO_0005090,schizophrenia,Pulmonic stenosis,HP_0001642
+MONDO_0005090,schizophrenia,Atrial septal defect,HP_0001631
+MONDO_0005090,schizophrenia,Broad nasal tip,HP_0000455
+MONDO_0005090,schizophrenia,2-4 finger cutaneous syndactyly,HP_0010709
+MONDO_0005090,schizophrenia,Overlapping toe,HP_0001845
+MONDO_0005090,schizophrenia,Smooth philtrum,HP_0000319
+MONDO_0005090,schizophrenia,Cryptorchidism,HP_0000028
+MONDO_0005090,schizophrenia,Widely spaced teeth,HP_0000687
+MONDO_0005090,schizophrenia,Inguinal hernia,HP_0000023
+MONDO_0005090,schizophrenia,Low posterior hairline,HP_0002162
+MONDO_0005090,schizophrenia,Plagiocephaly,HP_0001357
+MONDO_0005090,schizophrenia,Hyperbilirubinemia,HP_0002904
+MONDO_0005090,schizophrenia,Prominent nose,HP_0000448
+MONDO_0005090,schizophrenia,Micrognathia,HP_0000347
+MONDO_0005090,schizophrenia,Decreased body weight,HP_0004325
+MONDO_0005090,schizophrenia,Social and occupational deterioration,HP_0007086
+MONDO_0005090,schizophrenia,Moderate intellectual disability,HP_0002342
+MONDO_0005090,schizophrenia,Chronic lung disease,HP_0006528
+MONDO_0005090,schizophrenia,Failure to thrive in infancy,HP_0001531
+MONDO_0005090,schizophrenia,Frequent temper tantrums,HP_0025161
+MONDO_0005090,schizophrenia,Epicanthus,HP_0000286
+MONDO_0005090,schizophrenia,Obsessive-compulsive trait,HP_0008770
+MONDO_0005090,schizophrenia,Inverted nipples,HP_0003186
+MONDO_0005090,schizophrenia,Abnormal periventricular white matter morphology,HP_0002518
+MONDO_0005090,schizophrenia,Genu valgum,HP_0002857
+MONDO_0005090,schizophrenia,Linear earlobe crease,HP_0031510
+MONDO_0005090,schizophrenia,Mild myopia,HP_0025573
+MONDO_0005090,schizophrenia,Delayed speech and language development,HP_0000750
+MONDO_0005090,schizophrenia,Prominent forehead,HP_0011220
+MONDO_0005090,schizophrenia,Depressed nasal bridge,HP_0005280
+MONDO_0005090,schizophrenia,Negativism,HP_0410291
+MONDO_0005090,schizophrenia,Short nose,HP_0003196
+MONDO_0005090,schizophrenia,Abnormal posturing,HP_0002533

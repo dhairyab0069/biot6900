@@ -1,0 +1,50 @@
+disease_id,disease,gene,score
+MONDO_0005180,Parkinson disease,APOE,0.508
+MONDO_0005180,Parkinson disease,PECAM1,0.303
+MONDO_0005180,Parkinson disease,APOC1,0.114
+MONDO_0005180,Parkinson disease,HLA-DRB1,0.109
+MONDO_0005180,Parkinson disease,SHANK2,0.091
+MONDO_0005180,Parkinson disease,APOB,0.079
+MONDO_0005180,Parkinson disease,MOG,0.054
+MONDO_0005180,Parkinson disease,ITGAX,0.04
+MONDO_0005180,Parkinson disease,HLA-DRA,0.026
+MONDO_0005180,Parkinson disease,APLNR,0.018
+MONDO_0005180,Parkinson disease,RPH3A,0.017
+MONDO_0005180,Parkinson disease,NRXN3,0.009
+MONDO_0005180,Parkinson disease,GMPR,0.008
+MONDO_0005180,Parkinson disease,PLEC,0.005
+MONDO_0017276,frontotemporal dementia,APOE,0.476
+MONDO_0017276,frontotemporal dementia,APOC1,0.087
+MONDO_0017276,frontotemporal dementia,PLEC,0.078
+MONDO_0017276,frontotemporal dementia,APOB,0.034
+MONDO_0017276,frontotemporal dementia,HLA-DRA,0.033
+MONDO_0017276,frontotemporal dementia,NRXN3,0.007
+MONDO_0017276,frontotemporal dementia,HLA-DRB1,0.005
+MONDO_0017276,frontotemporal dementia,PECAM1,0.002
+MONDO_0017276,frontotemporal dementia,MOG,0.002
+MONDO_0017276,frontotemporal dementia,RPH3A,0.002
+MONDO_0004976,amyotrophic lateral sclerosis,PLEC,0.097
+MONDO_0004976,amyotrophic lateral sclerosis,APOE,0.082
+MONDO_0004976,amyotrophic lateral sclerosis,HLA-DRA,0.078
+MONDO_0004976,amyotrophic lateral sclerosis,APOB,0.075
+MONDO_0004976,amyotrophic lateral sclerosis,APOC1,0.033
+MONDO_0004976,amyotrophic lateral sclerosis,PECAM1,0.029
+MONDO_0004976,amyotrophic lateral sclerosis,MOG,0.024
+MONDO_0004976,amyotrophic lateral sclerosis,ITGAX,0.012
+MONDO_0004976,amyotrophic lateral sclerosis,HLA-DRB1,0.01
+MONDO_0004976,amyotrophic lateral sclerosis,APLNR,0.009
+MONDO_0004976,amyotrophic lateral sclerosis,NRXN3,0.007
+MONDO_0004976,amyotrophic lateral sclerosis,SHANK2,0.002
+MONDO_0005090,schizophrenia,APOE,0.386
+MONDO_0005090,schizophrenia,NRXN3,0.35
+MONDO_0005090,schizophrenia,APOC1,0.108
+MONDO_0005090,schizophrenia,SHANK2,0.085
+MONDO_0005090,schizophrenia,APOB,0.072
+MONDO_0005090,schizophrenia,HLA-DRB1,0.069
+MONDO_0005090,schizophrenia,PLEC,0.059
+MONDO_0005090,schizophrenia,PECAM1,0.044
+MONDO_0005090,schizophrenia,GMPR,0.04
+MONDO_0005090,schizophrenia,ITGAX,0.037
+MONDO_0005090,schizophrenia,MOG,0.036
+MONDO_0005090,schizophrenia,HLA-DRA,0.005
+MONDO_0005090,schizophrenia,APLNR,0.001

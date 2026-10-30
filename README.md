@@ -13,6 +13,7 @@ This repository has my work for BIOT 6900. I chose Alzheimer's disease in Module
 | [`portfolio1/`](portfolio1/) | Portfolio 1 | Labs 2 to 4 brought together into one ranked target package |
 | [`module5/`](module5/) | 5. Variant interpretation | How do a patient's variants in CYP2C19 change the drugs they can take? |
 | [`module6/`](module6/) | 6. Polygenic risk | Does an Alzheimer's risk score work equally well across ancestries? |
+| [`module7/`](module7/) | 7. Knowledge graph | Once all my evidence is connected in one graph, which genes stand out? |
 
 Each folder has its own README (what I did, data sources and what didn't work) and my report as `REPORT.pdf`.
 
@@ -55,6 +56,12 @@ For [Portfolio 1](portfolio1/) I put Labs 2 to 4 together into one report, endin
 In [Module 6](module6/) I came back to APOE as part of a 22-SNP Alzheimer's risk score, which I applied to 2,336 genomes from five ancestry groups. The score worked best in Europeans (AUC 0.672) and was no better than chance in the African-ancestry group (0.493). When I removed the two APOE SNPs, every group came out at about 0.58, so the drop comes from how the course data simulated APOE's effect, not from APOE biology.
 
 <img src="module6/figures/fig_auc_apoe.png" width="560" alt="AUC by ancestry with and without the APOE SNPs">
+
+### 7. Putting it all in one graph
+
+In [Module 7](module7/) I loaded my 15 genes and their evidence from Modules 2–6 into a Neo4j knowledge graph, with public pathways, drugs, related diseases and symptoms from Open Targets, and 200 patients from the Module 6 cohort. Combining network position with my scores ranked PECAM1, APOC1, ITGAX, HLA-DRB1 and APOE on top, four of them from my Portfolio 1 shortlist. The graph also found real drugs on my genes (mipomersen on APOB, apelin on APLNR) and linked HLA-DRB1 to Parkinson's through shared symptoms.
+
+<img src="module7/figures/kg_neo4j_view.png" width="420" alt="Part of my knowledge graph in Neo4j: Alzheimer's and Parkinson disease with the genes and symptoms that connect them">
 
 ## Running the notebooks
 
