@@ -30,3 +30,8 @@ module7/*.pptx
 module7/Neo4j-*.txt
 module7/.env
 .env
+!module7/REPORT.pdf
+# Module 7: copies of earlier outputs from the course pack; the notebook reads the originals
+module7/targets_ad.csv
+module7/targets_ad_w3.csv
+module7/structure_assessment_ad.csv

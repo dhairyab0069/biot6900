@@ -1,0 +1,77 @@
+gene,pathway,pathway_id,top_level
+HLA-DRA,Downstream TCR signaling,R-HSA-202424,Immune System
+HLA-DRA,Phosphorylation of CD3 and TCR zeta chains,R-HSA-202427,Immune System
+HLA-DRA,Affinity selection of immunoglobulins,R-HSA-9938027,Immune System
+HLA-DRA,Interferon gamma signaling,R-HSA-877300,Immune System
+HLA-DRA,Generation of second messenger molecules,R-HSA-202433,Immune System
+HLA-DRA,MHC class II antigen presentation,R-HSA-2132295,Immune System
+HLA-DRA,Differentiation of Circulating Monocytes,R-HSA-9968734,Developmental Biology
+HLA-DRA,Translocation of ZAP-70 to Immunological synapse,R-HSA-202430,Immune System
+HLA-DRA,Processing of antigen in germinal center B cells,R-HSA-9979719,Immune System
+HLA-DRA,Co-inhibition by PD-1,R-HSA-389948,Immune System
+HLA-DRB1,Downstream TCR signaling,R-HSA-202424,Immune System
+HLA-DRB1,Phosphorylation of CD3 and TCR zeta chains,R-HSA-202427,Immune System
+HLA-DRB1,Affinity selection of immunoglobulins,R-HSA-9938027,Immune System
+HLA-DRB1,Interferon gamma signaling,R-HSA-877300,Immune System
+HLA-DRB1,Generation of second messenger molecules,R-HSA-202433,Immune System
+HLA-DRB1,MHC class II antigen presentation,R-HSA-2132295,Immune System
+HLA-DRB1,Translocation of ZAP-70 to Immunological synapse,R-HSA-202430,Immune System
+HLA-DRB1,Processing of antigen in germinal center B cells,R-HSA-9979719,Immune System
+HLA-DRB1,Co-inhibition by PD-1,R-HSA-389948,Immune System
+APOC1,VLDL assembly,R-HSA-8866423,Transport of small molecules
+APOC1,VLDL clearance,R-HSA-8964046,Transport of small molecules
+APOC1,NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux,R-HSA-9029569,Signal Transduction
+PECAM1,Neutrophil degranulation,R-HSA-6798695,Immune System
+PECAM1,Platelet degranulation ,R-HSA-114608,Hemostasis
+PECAM1,Platelet sensitization by LDL,R-HSA-432142,Hemostasis
+PECAM1,High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells,R-HSA-9856530,Cellular responses to stimuli
+PECAM1,Integrin cell surface interactions,R-HSA-216083,Extracellular matrix organization
+PECAM1,Cell surface interactions at the vascular wall,R-HSA-202733,Hemostasis
+PECAM1,PECAM1 interactions,R-HSA-210990,Hemostasis
+ITGAX,ECM proteoglycans,R-HSA-3000178,Extracellular matrix organization
+ITGAX,Neutrophil degranulation,R-HSA-6798695,Immune System
+ITGAX,Interleukin-4 and Interleukin-13 signaling,R-HSA-6785807,Immune System
+ITGAX,Integrin cell surface interactions,R-HSA-216083,Extracellular matrix organization
+ITGAX,Cell surface interactions at the vascular wall,R-HSA-202733,Hemostasis
+ITGAX,Differentiation of Circulating Monocytes,R-HSA-9968734,Developmental Biology
+GMPR,Purine salvage,R-HSA-74217,Metabolism
+GMPR,Regulation of MITF-M dependent genes involved in invasion,R-HSA-9854909,Developmental Biology
+NRXN3,Neurexins and neuroligins,R-HSA-6794361,Neuronal System
+APLNR,G alpha (i) signalling events,R-HSA-418594,Signal Transduction
+APLNR,Peptide ligand-binding receptors,R-HSA-375276,Signal Transduction
+APOE,Nuclear signaling by ERBB4,R-HSA-1251985,Signal Transduction
+APOE,Chylomicron clearance,R-HSA-8964026,Transport of small molecules
+APOE,Scavenging by Class A Receptors,R-HSA-3000480,Vesicle-mediated transport
+APOE,Chylomicron assembly,R-HSA-8963888,Transport of small molecules
+APOE,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),R-HSA-381426,Metabolism of proteins
+APOE,Post-translational protein phosphorylation,R-HSA-8957275,Metabolism of proteins
+APOE,HDL remodeling,R-HSA-8964058,Transport of small molecules
+APOE,Retinoid metabolism and transport,R-HSA-975634,Sensory Perception
+APOE,Amyloid fiber formation,R-HSA-977225,Metabolism of proteins
+APOE,Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors,R-HSA-8864260,Gene expression (Transcription)
+APOE,NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux,R-HSA-9029569,Signal Transduction
+APOE,Chylomicron remodeling,R-HSA-8963901,Transport of small molecules
+SHANK2,Neurexins and neuroligins,R-HSA-6794361,Neuronal System
+APOB,Scavenging by Class B Receptors,R-HSA-3000471,Vesicle-mediated transport
+APOB,LDL remodeling,R-HSA-8964041,Transport of small molecules
+APOB,Heme signaling,R-HSA-9707616,Cellular responses to stimuli
+APOB,Scavenging by Class F Receptors,R-HSA-3000484,Vesicle-mediated transport
+APOB,Cell surface interactions at the vascular wall,R-HSA-202733,Hemostasis
+APOB,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),R-HSA-381426,Metabolism of proteins
+APOB,LDL clearance,R-HSA-8964038,Transport of small molecules
+APOB,Cargo recognition for clathrin-mediated endocytosis,R-HSA-8856825,Vesicle-mediated transport
+APOB,Platelet sensitization by LDL,R-HSA-432142,Hemostasis
+APOB,VLDL assembly,R-HSA-8866423,Transport of small molecules
+APOB,VLDL clearance,R-HSA-8964046,Transport of small molecules
+APOB,Chylomicron clearance,R-HSA-8964026,Transport of small molecules
+APOB,Scavenging by Class A Receptors,R-HSA-3000480,Vesicle-mediated transport
+APOB,Chylomicron assembly,R-HSA-8963888,Transport of small molecules
+APOB,Regulation of TLR by endogenous ligand,R-HSA-5686938,Immune System
+APOB,Post-translational protein phosphorylation,R-HSA-8957275,Metabolism of proteins
+APOB,Clathrin-mediated endocytosis,R-HSA-8856828,Vesicle-mediated transport
+APOB,Retinoid metabolism and transport,R-HSA-975634,Sensory Perception
+APOB,Scavenging by Class H Receptors,R-HSA-3000497,Vesicle-mediated transport
+APOB,Chylomicron remodeling,R-HSA-8963901,Transport of small molecules
+PLEC,Assembly of collagen fibrils and other multimeric structures,R-HSA-2022090,Extracellular matrix organization
+PLEC,Caspase-mediated cleavage of cytoskeletal proteins,R-HSA-264870,Programmed Cell Death
+PLEC,Type I hemidesmosome assembly,R-HSA-446107,Cell-Cell communication

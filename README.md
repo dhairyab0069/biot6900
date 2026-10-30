@@ -9,15 +9,20 @@
 part (pLDDT). Purple and red points are pockets found by fpocket. On APLNR (right), the purple pocket is
 where a real drug binds in the lab structure.*
 
-**Jump to:** [Summary](#summary) · [Results](#4-results) · [Shortlist](#44-the-shortlist) · [Risk scores across ancestries](#46-does-a-risk-score-work-across-ancestries) · [Limitations](#5-limitations) · [**Reproduce it**](#6-how-to-reproduce) · [Where things are](#7-where-things-are) · [Interactive report](https://dhairyab0069.github.io/biot6900-io/)
+**Jump to:** [Summary](#summary) · [Results](#4-results) · [Shortlist](#44-the-shortlist) · [Risk scores across ancestries](#46-does-a-risk-score-work-across-ancestries) · [Knowledge graph](#47-what-does-a-knowledge-graph-add) · [Limitations](#5-limitations) · [**Reproduce it**](#6-how-to-reproduce) · [Where things are](#7-where-things-are) · [Interactive report](https://dhairyab0069.github.io/biot6900-io/)
 
 ## Summary
 
 This is my BIOT 6900 coursework, by Dhairya Bhatia. I chose Alzheimer's disease in Module 2 and kept it for
 most of the course, so each module builds on the last. I asked one question in stages: **which genes are
 involved in Alzheimer's, which of them could a drug act on, and does the protein have a place for the drug
-to bind?** Then I asked how well genetic risk carries across ancestries, and, with an assigned gene, how a
-patient's DNA changes their response to a drug.
+to bind?** Then I asked how well genetic risk carries across ancestries, how a patient's DNA changes their
+response to a drug (with an assigned gene), and what connecting all of my evidence in one knowledge graph
+adds.
+
+The work is grouped into the course's portfolio deliverables: **Deliverable 1** (target discovery) is
+Modules 2–4 and Portfolio 1; **Deliverable 2** (genomics and precision medicine) is Modules 5–7, with
+Module 8 (single-cell) in progress.
 
 What I found:
 
@@ -35,6 +40,9 @@ What I found:
 - **A published Alzheimer's risk score works best in Europeans (AUC 0.672) and is at chance in the
   African-ancestry group (0.493).** Without its two APOE SNPs every group sits near 0.58, so the drop comes
   from how the course data simulated APOE, not from APOE biology (Section 4.6).
+- **A knowledge graph of my genes ranks PECAM1, APOC1, ITGAX, HLA-DRB1 and APOE on top.** Fusing network
+  position with my scores puts four of my five shortlist genes in the top five, finds real drugs on APOB and
+  APLNR, and links HLA-DRB1 to Parkinson's through shared symptoms (Section 4.7).
 
 ## 1. Background
 
@@ -75,6 +83,7 @@ Every dataset is public or provided by the course.
 | 4 | Lab structures | RCSB PDB: 4NEH, 3K6S, 7SUS, 1CQP | 4 entries |
 | 5 | Clinical labels, CADD, REVEL, AlphaMissense, gnomAD | ClinVar [8], CADD [9], via MyVariant.info [10] | 80 CYP2C19 variants |
 | 6 | A published AD risk score and real genomes | PGS000334 [11], 1000 Genomes [12] | 22 SNPs, 2,336 people |
+| 7 | Pathways, drugs, related diseases and symptoms for my 15 genes | Open Targets [5], Reactome [14], HPO [15] | 415 nodes, 329 relationships |
 
 The data in Modules 2 to 4 is **gene-level**: one number per gene, not per person. Module 6's disease
 labels are **simulated** by the course, because 1000 Genomes has no medical records.
@@ -119,6 +128,17 @@ labels are **simulated** by the course, because 1000 Genomes has no medical reco
 - Measure AUC overall and per ancestry, the share of each group above one pooled top-10% cutoff, and
   calibration of a model fitted on Europeans only.
 - Extra check: recompute each group's AUC without the two APOE SNPs, and with APOE e4 alone.
+
+### 3.6 Knowledge graph (Module 7)
+
+- Build a property graph in Neo4j: my 15 genes carrying their Modules 2–4 evidence, plus Reactome pathways,
+  drugs, related diseases and HPO symptoms from the Open Targets API, and 200 patients from the Module 6
+  cohort (real APOE genotypes, my risk scores, simulated labels).
+- Pick the related diseases by the data: the two that share the most of my genes (Open Targets score ≥ 0.1).
+- Query it in Cypher: drugs on my genes (2 hops), a repurposing walk through shared symptoms (5 hops), and
+  pathways shared by my genes.
+- Rank the genes by fusing PageRank with my Module 2 score, my druggability score and the Open Targets
+  Alzheimer's score, with equal weight; find communities; stratify the patients by APOE genotype.
 
 ## 4. Results
 
@@ -222,6 +242,29 @@ The full write-up is the [Portfolio 1 report](portfolio1/REPORT.pdf).
 - **One cutoff is not fair.** It flags 28% of the African-ancestry group and 2% of the East Asian group.
 - **The score adds a little to age:** cross-validated AUC rises from 0.562 to 0.618.
 
+### 4.7 What does a knowledge graph add
+
+| # | Gene | PageRank | Module 2 score | Druggability | Open Targets AD | Fused |
+|:---:|---|:---:|:---:|:---:|:---:|:---:|
+| 1 | PECAM1 | 0.015 | 0.939 | 0.88 | 0.37 | 0.83 |
+| 2 | APOC1 | 0.010 | 0.949 | 0.25 | 0.57 | 0.73 |
+| 3 | ITGAX | 0.011 | 0.912 | 0.59 | 0.23 | 0.68 |
+| 4 | HLA-DRB1 | 0.021 | 0.955 | 0.27 | 0.08 | 0.65 |
+| 5 | APOE | 0.028 | 0.902 | 0.02 | 0.79 | 0.61 |
+
+<img src="module7/figures/kg_neo4j_view.png" width="460" alt="Part of my knowledge graph in Neo4j: Alzheimer's and Parkinson disease with the genes and symptoms that connect them">
+
+*Figure 5. Part of my graph in Neo4j Explore: Alzheimer's and Parkinson disease share APOE, APOC1, PECAM1 and
+HLA-DRB1; APOE carries the e4 variant; HLA-DRB1 and HLA-DRA meet in immune pathways.*
+
+- **Real drugs on my genes.** Mipomersen (approved for high cholesterol) targets APOB and apelin (phase 2)
+  acts on APLNR; three candidates act on HLA-DRB1. None is for Alzheimer's yet.
+- **A repurposing route.** The HLA-DRB1 candidates are reached through Parkinson disease, which shares
+  depression and parkinsonism with Alzheimer's.
+- **Biology confirmed by shared pathways.** My genes group into lipid transport (APOE, APOB, APOC1), immune
+  signalling (HLA-DRA, HLA-DRB1) and vascular and immune-cell surfaces (PECAM1, ITGAX).
+- **Patients.** The risk-score percentile rises from 41 in e3/e3 to 99 in e4/e4.
+
 ## 5. Limitations
 
 - **Gene-level data only.** Modules 2 to 4 use one number per gene, not per person, so nothing here is
@@ -230,6 +273,8 @@ The full write-up is the [Portfolio 1 report](portfolio1/REPORT.pdf).
   structure evidence.
 - **Druggability is resemblance.** The scores say a protein looks like past drug targets, not that a drug
   will work.
+- **Public-data bias.** In the knowledge graph, well-studied genes have more links, so APLNR, my lead
+  small-molecule target, ranks only 11th of 15 there.
 - **Simulated phenotype.** Module 6's AUCs illustrate the portability problem; they don't measure real
   Alzheimer's risk.
 - **Coursework scale.** Each module was about one week, with one run per analysis and no confidence
@@ -240,7 +285,7 @@ The full write-up is the [Portfolio 1 report](portfolio1/REPORT.pdf).
 | | What you get | Needs | Time |
 |---|---|---|---|
 | [6.1](#61-read-the-results) | Every number in this README, in the reports | A browser | minutes |
-| [6.2](#62-run-a-module) | One module's notebook, from its data | The `biot6900` conda environment; course data for Modules 3 and 6 | 5–30 minutes |
+| [6.2](#62-run-a-module) | One module's notebook, from its data | The `biot6900` conda environment; course data for Modules 3 and 6; a free Neo4j AuraDB instance for Module 7 | 5–30 minutes |
 | [6.3](#63-remake-the-figures) | The report figures and this README's animation | The data folders each notebook writes | about a minute |
 
 ### 6.1 Read the results
@@ -264,6 +309,9 @@ jupyter lab                              # open a module's notebook, then Kernel
   fpocket (`conda install -c conda-forge fpocket`).
 - **Module 5** fetches CYP2C19 and DPYD from MyVariant.info on first run.
 - **Module 6** needs the course `data.zip` from Canvas, unzipped to `module6/data/`.
+- **Module 7** needs a free Neo4j AuraDB instance. Put its URI in the first code cell and its username and
+  password in the environment (`conda env config vars set -n biot6900 NEO4J_USERNAME=... NEO4J_PASSWORD=...`),
+  never in the notebook. `python module7/scripts/build_kg_data.py` refreshes the Open Targets data.
 
 ### 6.3 Remake the figures
 
@@ -286,6 +334,7 @@ module4/          AlphaFold structures and pockets: notebooks, structure_assessm
 portfolio1/       Labs 2 to 4 brought together: report and figures
 module5/          CYP2C19 variant interpretation: notebook, classified variants, figure, report
 module6/          polygenic risk across ancestries: graded notebook, extra-check script, figures, report
+module7/          Neo4j knowledge graph: notebook, Open Targets data and script, figures, report
 figures/          the animation at the top of this README
 scripts/          make_readme_gif.py
 ```
@@ -332,3 +381,9 @@ implies an oligogenic architecture. *Nature Communications*, 11, 4799, 2020.
 
 [13] V. Le Guilloux, P. Schmidtke, P. Tufféry. Fpocket: an open source platform for ligand pocket
 detection. *BMC Bioinformatics*, 10, 168, 2009.
+
+[14] M. Milacic, D. Beavers, P. Conley et al. The Reactome Pathway Knowledgebase 2024. *Nucleic Acids
+Research*, 52(D1), D672–D678, 2024.
+
+[15] M. A. Gargano, N. Matentzoglu, B. Coleman et al. The Human Phenotype Ontology in 2024: phenotypes around
+the world. *Nucleic Acids Research*, 52(D1), D1333–D1346, 2024.
