@@ -323,7 +323,7 @@ HLA-DRB1; APOE carries the e4 variant; HLA-DRB1 and HLA-DRA meet in immune pathw
 
 *Target:* mean EPCAM expression was highest in T cells (0.374) and tumour cells (0.331). It was detected in 26.7% of T cells and 21.7% of tumour cells, and in T cells it ranged from about 5% to 71.5% by donor.
 
-*Tissue:* the Visium section split into 9 domains. The top spatially variable genes were MGP (Moran's I 0.869), MALAT1 (0.763) and CRISP3 (0.726). Neighbourhood enrichment was strong on the diagonal and near zero elsewhere. EPCAM was low and spread out, so I could not place it in the tumour core, the margin or an immune niche.
+*Tissue:* the Visium section split into 9 domains. The top spatially variable genes were MGP (Moran's I 0.869), MALAT1 (0.763) and CRISP3 (0.726). Neighbourhood enrichment was strong on the diagonal (up to about 98) and negative elsewhere (about -5 to -25), except between domains 0 and 1 (about +9). EPCAM was low and spread out, so I could not place it in the tumour core, the margin or an immune niche.
 
 *Caveat:* some results may have small issues. The cluster's GPU nodes failed, so scVI ran on a CPU for 60 epochs, and jobs failed several times before the final run. See [`module8/README.md`](module8/README.md) and the report.
 
