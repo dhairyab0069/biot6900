@@ -35,3 +35,6 @@ module7/.env
 module7/targets_ad.csv
 module7/targets_ad_w3.csv
 module7/structure_assessment_ad.csv
+
+# Module 10: raw PathMNIST download (about 1 GB); the 17 MB subset file in module10/data is kept
+module10/data/raw/
