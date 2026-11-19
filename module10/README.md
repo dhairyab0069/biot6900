@@ -7,7 +7,8 @@
 *Files:*
 
 - `BIOT6900_Module10_Assignment.ipynb`: the executed notebook (run top to bottom on a laptop CPU, seed 0).
-- `Module 10 report.docx`: the report.
+- `Module 10 report.docx` and `Module 10 report.pdf`: the report (the last page is a glossary for reference).
+- `BIOT6900_Module10_Toy_MedNIST.ipynb`: the worked toy notebook.
 - `build_subset.py`: builds the data file from the PathMNIST download.
 
 *How to run:* use the `biot6900` environment (MONAI, MedMNIST, scikit-learn) and run the notebook. It needs `data/pathmnist_tumour_vs_normal_subset.npz` (600 training, 400 validation and 600 test images). This repo ignores data folders, so the file is not committed. Put the course's Canvas file there, or run `python build_subset.py` to build it (it downloads about 1 GB from Zenodo).
