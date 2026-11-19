@@ -1,4 +1,4 @@
-# Which Alzheimer's Genes Could a Drug Reach? Following One Disease from GWAS to Drug Pockets
+# BIOT 6900 coursework
 
 [![Interactive report](https://img.shields.io/badge/interactive_report-live-0d5c63)](https://dhairyab0069.github.io/biot6900-io/)
 [![Course](https://img.shields.io/badge/BIOT_6900-Northeastern-16191d)](https://github.com/dhairyab0069/biot6900)
@@ -9,22 +9,40 @@
 part (pLDDT). Purple and red points are pockets found by fpocket. On APLNR (right), the purple pocket is
 where a real drug binds in the lab structure.*
 
-**Jump to:** [Summary](#summary) · [Results](#4-results) · [Shortlist](#44-the-shortlist) · [Risk scores across ancestries](#46-does-a-risk-score-work-across-ancestries) · [Knowledge graph](#47-what-does-a-knowledge-graph-add) · [Limitations](#5-limitations) · [**Reproduce it**](#6-how-to-reproduce) · [Where things are](#7-where-things-are) · [Interactive report](https://dhairyab0069.github.io/biot6900-io/)
+*Jump to:* [Summary](#summary) · [Findings](#findings) · [Results](#4-results) · [Limitations](#5-limitations) · [Reproduce it](#6-how-to-reproduce) · [Where things are](#7-where-things-are) · [Interactive report](https://dhairyab0069.github.io/biot6900-io/)
 
 ## Summary
 
-This is my BIOT 6900 coursework, by Dhairya Bhatia. I chose Alzheimer's disease in Module 2 and kept it for
-most of the course, so each module builds on the last. I asked one question in stages: **which genes are
-involved in Alzheimer's, which of them could a drug act on, and does the protein have a place for the drug
-to bind?** Then I asked how well genetic risk carries across ancestries, how a patient's DNA changes their
-response to a drug (with an assigned gene), and what connecting all of my evidence in one knowledge graph
-adds.
+This is my BIOT 6900 coursework, by Dhairya Bhatia (Northeastern University). The course has three parts, and the disease or data set changes where an assignment fixed its own data. The first half follows one disease, Alzheimer's, from genes to drug pockets. The second half asks other genomics questions: drug response, genetic risk across ancestries, a knowledge graph, and a breast cancer single-cell and spatial view. The third part checks clinical models, on a synthetic HIV cohort and on colon tissue images. One habit ties it all together: after each result, I asked if it can be trusted.
 
-The work is grouped into the course's portfolio deliverables: **Deliverable 1** (target discovery) is
-Modules 2–4 and Portfolio 1; **Deliverable 2** (genomics and precision medicine) is Modules 5–7, with
-Module 8 (single-cell) in progress.
+### The course in one table
 
-What I found:
+| Part | Modules | Disease or topic | Question | Folder |
+|---|---|---|---|---|
+| I | 2 to 4, Portfolio 1 | Alzheimer's disease | Which genes are involved, which could a drug reach, and is there a pocket? | `module2`, `module3`, `module4`, `portfolio1` |
+| II | 5 | Drug response, CYP2C19 (assigned gene) | Can variant scores classify the gene's uncertain variants? | `module5` |
+| II | 6 | Alzheimer's disease | Does a risk score work across ancestries? | `module6` |
+| II | 7 | Alzheimer's disease | What does connecting all my evidence add? | `module7` |
+| II | 8 | Breast cancer | Which cells express a target, and where do they sit in the tumour? | `module8` |
+| II | Portfolio 2 | Modules 5 to 8 together | Skeleton so far | `portfolio2` |
+| III | 9 | HIV (synthetic cohort) | How much of a clinical model's skill is leakage? | `module9` |
+| III | 10 | Colorectal cancer (tissue images) | Does a pathology model learn tissue or a scanner tag? | `module10` |
+
+Module 1 is setup (`module1`).
+
+### How the pieces connect
+
+*Part I, one disease:* I chose Alzheimer's in Module 2 and kept it, so each module builds on the last: RNA, protein and DNA evidence (Module 2), druggability with protein language models (Module 3), and AlphaFold structures and pockets (Module 4). Portfolio 1 brings these into one shortlist.
+
+*Part II, new questions:* Modules 5 and 8 came with their own data (an assigned gene, CYP2C19, and a breast cancer single-cell and Visium data set), so they do not follow Alzheimer's. Modules 6 and 7 return to Alzheimer's: how a published risk score carries across ancestries, and a knowledge graph that connects the evidence for my genes.
+
+*Part III, clinical models:* Module 9 uses a synthetic HIV cohort and Module 10 uses PathMNIST colon tissue images. Both ask about the same risk: a model that scores well because of something other than the disease.
+
+*The common thread:* every module ended with a check. Known Alzheimer's genes ranked near the top (Module 2). CADD called CYP2C19's own broken alleles benign (Module 5). The risk score was at chance in one ancestry group (Module 6). Integration was judged with scores (Module 8). Removing leakage cut an AUROC from 0.910 to 0.712 (Module 9). A barcode on one class turned out to be a shortcut (Module 10).
+
+## Findings
+
+*Part I and Part II, Alzheimer's and CYP2C19 (Modules 2 to 7):*
 
 - **1,115 genes have evidence in brain RNA, brain protein and DNA at the same time.** Known Alzheimer's genes
   rank near the top (HLA-DRB1 2nd, APOE 11th, CLU 31st), which made me more confident in the method
@@ -44,7 +62,19 @@ What I found:
   position with my scores puts four of my five shortlist genes in the top five, finds real drugs on APOB and
   APLNR, and links HLA-DRB1 to Parkinson's through shared symptoms (Section 4.7).
 
+*Part II, single-cell and spatial (Module 8):*
+
+- Harmony mixed donors better than my scVI run (donor silhouette -0.082 against -0.029; 0.091 with no integration). All cell-type silhouettes were near zero (-0.010 to 0.026), so the scores could not separate the methods on biology.
+- EPCAM was not a clean tumour marker in my sample. All 152 tumour cells came from one donor, and EPCAM was also detected in 26.7% of T cells, from about 5% to 71.5% depending on the donor (Section 4.8).
+
+*Part III, clinical models (Modules 9 and 10):*
+
+- In the HIV cohort the model's AUROC fell from 0.910 to 0.712 once all leakage was removed, so about 48% of its skill above chance was leakage (Section 4.9).
+- In the colon tissue images, a barcode added to tumour images only was learned: the model's tumour recall fell from 100.0% to 37.0% without it, and it scored 20.2% when the barcode moved to normal images. A clean control reacted much less (23.0% flips against 96.7%) (Section 4.10).
+
 ## 1. Background
+
+*This background is for the Alzheimer's modules (2 to 7). Modules 8 to 10 have their own short background in their READMEs.*
 
 Alzheimer's disease is the most common cause of dementia, and there are still very few treatments for it.
 A disease leaves traces in several layers at once:
@@ -84,9 +114,13 @@ Every dataset is public or provided by the course.
 | 5 | Clinical labels, CADD, REVEL, AlphaMissense, gnomAD | ClinVar [8], CADD [9], via MyVariant.info [10] | 80 CYP2C19 variants |
 | 6 | A published AD risk score and real genomes | PGS000334 [11], 1000 Genomes [12] | 22 SNPs, 2,336 people |
 | 7 | Pathways, drugs, related diseases and symptoms for my 15 genes | Open Targets [5], Reactome [14], HPO [15] | 415 nodes, 329 relationships |
+| 8 | Breast cancer single-cell data, 10 donors x 2,000 cells | CZ CELLxGENE Census, "stable" release 2025-11-08 | 20,000 cells (18,388 after QC) |
+| 8 | Breast cancer Visium section | 10x Genomics, loaded with scanpy | 3,798 spots |
+| 9 | Synthetic HIV cohort | Course notebook | 400 patients, 3 notes each |
+| 10 | Colon tissue images, normal against tumour | PathMNIST (MedMNIST v3, Zenodo record 10519652) | 600 train, 400 validation, 600 test images |
 
 The data in Modules 2 to 4 is **gene-level**: one number per gene, not per person. Module 6's disease
-labels are **simulated** by the course, because 1000 Genomes has no medical records.
+labels are **simulated** by the course, because 1000 Genomes has no medical records. Modules 8 to 10 are not gene-level: Module 8 is cell-level and spot-level, Module 9 is patient-level (synthetic), and Module 10 is image-level.
 
 ## 3. Method
 
@@ -139,6 +173,18 @@ labels are **simulated** by the course, because 1000 Genomes has no medical reco
   pathways shared by my genes.
 - Rank the genes by fusing PageRank with my Module 2 score, my druggability score and the Open Targets
   Alzheimer's score, with equal weight; find communities; stratify the patients by APOE genotype.
+
+### 3.7 Single-cell and spatial (Module 8)
+
+I took breast cancer cells from the CZ CELLxGENE Census (10 whole donors, 2,000 cells each), removed the donor batch effect with scVI and Harmony, scored both with silhouette values, and asked which cell types express my target gene, EPCAM. Then I clustered a 10x Visium breast cancer section into domains, ran Moran's I and neighbourhood enrichment, and plotted EPCAM on the tissue.
+
+### 3.8 Clinical NLP and leakage (Module 9)
+
+On a synthetic HIV cohort (400 patients, 3 notes each, inpatient death as the outcome) I pulled features out of the notes and trained a logistic regression. Then I removed the features that give away the outcome (intubation, pressors, comfort care, renal replacement) to see how much of the score was leakage.
+
+### 3.9 Pathology images (Module 10)
+
+I fine-tuned a pretrained DenseNet121 on colon tumour against normal tissue images (PathMNIST), added a barcode to the tumour images only, and retrained. Then I tested, with Grad-CAM, occlusion, a reliance test, a flip test and a clean control, whether the model learned the barcode.
 
 ## 4. Results
 
@@ -265,10 +311,47 @@ HLA-DRB1; APOE carries the e4 variant; HLA-DRB1 and HLA-DRA meet in immune pathw
   signalling (HLA-DRA, HLA-DRB1) and vascular and immune-cell surfaces (PECAM1, ITGAX).
 - **Patients.** The risk-score percentile rises from 41 in e3/e3 to 99 in e4/e4.
 
+### 4.8 Where does the target sit? (Module 8)
+
+*Cells:* 20,000 sampled cells, 18,388 after quality control. T cells are 66% of the sample. The 152 epithelial or tumour cells all come from one donor.
+
+| Embedding | Donor silhouette (lower is better) | Cell-type silhouette (higher is better) |
+|---|---|---|
+| No integration | 0.091 | -0.010 |
+| Harmony | -0.082 | 0.026 |
+| scVI (CPU, 60 epochs) | -0.029 | 0.012 |
+
+*Target:* mean EPCAM expression was highest in T cells (0.374) and tumour cells (0.331). It was detected in 26.7% of T cells and 21.7% of tumour cells, and in T cells it ranged from about 5% to 71.5% by donor.
+
+*Tissue:* the Visium section split into 9 domains. The top spatially variable genes were MGP (Moran's I 0.869), MALAT1 (0.763) and CRISP3 (0.726). Neighbourhood enrichment was strong on the diagonal and near zero elsewhere. EPCAM was low and spread out, so I could not place it in the tumour core, the margin or an immune niche.
+
+*Caveat:* some results may have small issues. The cluster's GPU nodes failed, so scVI ran on a CPU for 60 epochs, and jobs failed several times before the final run. See [`module8/README.md`](module8/README.md) and the report.
+
+### 4.9 How much of a clinical model's skill is leakage? (Module 9)
+
+| Features | AUROC (5-fold cross-validated) |
+|---|---|
+| All features | 0.910 |
+| Declared leakage removed (intubation, pressors, comfort care) | 0.802 |
+| All leakage removed (also renal replacement) | 0.712 |
+
+About 48% of the model's skill above chance was leakage. My first leakage list missed renal replacement, so the score stayed too high until I found it. See [`module9/README.md`](module9/README.md).
+
+### 4.10 Did the pathology model learn the tissue or the tag? (Module 10)
+
+The clean model reached 96.0% on validation and 94.7% on test. I then added a white barcode to every tumour image and retrained.
+
+| | Tumour recall with barcode | Tumour recall without barcode | Normal images with barcode called tumour |
+|---|---|---|---|
+| Confounded model | 100.0% | 37.0% | 96.7% |
+| Clean control | 99.0% | 93.7% | 23.0% |
+
+With the barcode moved to normal images, the confounded model scored 20.2% (chance is 50%). The clean control reacted much less, but not at all: 23.0% of normal images flipped, so the barcode is a little easy to notice even for a model that never saw it. See [`module10/README.md`](module10/README.md) and the report.
+
 ## 5. Limitations
 
-- **Gene-level data only.** Modules 2 to 4 use one number per gene, not per person, so nothing here is
-  about individual patients.
+- **Gene-level data only.** Modules 2 to 4 use one number per gene, not per person, so those modules say
+  nothing about individual patients.
 - **Two structures.** Only ITGAX and APLNR were assessed structurally; PECAM1, HLA-DRB1 and APOE have no
   structure evidence.
 - **Druggability is resemblance.** The scores say a protein looks like past drug targets, not that a drug
@@ -280,6 +363,10 @@ HLA-DRB1; APOE carries the e4 variant; HLA-DRB1 and HLA-DRA meet in immune pathw
 - **Coursework scale.** Each module was about one week, with one run per analysis and no confidence
   intervals.
 
+- **One donor holds the tumour cells (Module 8).** All 152 epithelial or tumour cells come from one donor, scVI ran on a CPU for 60 epochs, and the Visium result is one section from one patient.
+- **Synthetic cohort (Module 9).** The HIV cohort is simulated, with about 100 deaths and one seed, so the AUROCs are noisy (fold to fold up to about 0.1).
+- **Synthetic tag (Module 10).** The barcode is made up and always in the same corner. One seed, 3 epochs and 600 training images, with no confidence intervals.
+
 ## 6. How to reproduce
 
 | | What you get | Needs | Time |
@@ -290,7 +377,7 @@ HLA-DRB1; APOE carries the e4 variant; HLA-DRB1 and HLA-DRA meet in immune pathw
 
 ### 6.1 Read the results
 
-Each module folder has a `REPORT.pdf` and a README with its data sources and what didn't work. The
+Each module folder has a report (`REPORT.pdf`, or `Module 8 report.pdf` and `Module 10 report.pdf`) and a README with its data sources and what didn't work. The
 [interactive report](https://dhairyab0069.github.io/biot6900-io/) has the same results with interactive
 figures and the 3D structures.
 
@@ -312,6 +399,9 @@ jupyter lab                              # open a module's notebook, then Kernel
 - **Module 7** needs a free Neo4j AuraDB instance. Put its URI in the first code cell and its username and
   password in the environment (`conda env config vars set -n biot6900 NEO4J_USERNAME=... NEO4J_PASSWORD=...`),
   never in the notebook. `python module7/scripts/build_kg_data.py` refreshes the Open Targets data.
+- **Module 8** was run on the Explorer cluster. The cluster could not read the Census, so I ran the starter's own query and sampling on a laptop and saved the 20,000-cell sample as `census_sample.h5ad` (about 312 MB, not committed); the notebook loads that file. To recreate it, run the starter's Census query.
+- **Module 9** runs from its notebook alone (synthetic cohort, seed fixed in the notebook).
+- **Module 10** needs `module10/data/pathmnist_tumour_vs_normal_subset.npz` (not committed, because `data/` is ignored). Use the Canvas file, or run `python module10/build_subset.py` (downloads about 1 GB from Zenodo).
 
 ### 6.3 Remake the figures
 
@@ -335,6 +425,10 @@ portfolio1/       Labs 2 to 4 brought together: report and figures
 module5/          CYP2C19 variant interpretation: notebook, classified variants, figure, report
 module6/          polygenic risk across ancestries: graded notebook, extra-check script, figures, report
 module7/          Neo4j knowledge graph: notebook, Open Targets data and script, figures, report
+module8/          breast cancer single-cell and spatial view: executed notebook, two toy notebooks, report, README
+portfolio2/       Modules 5 to 8 together: report skeleton and README
+module9/          HIV clinical NLP and leakage: graded notebook, README
+module10/         colon tissue shortcut test: executed notebook, toy notebook, subset builder, report, README
 figures/          the animation at the top of this README
 scripts/          make_readme_gif.py
 ```
